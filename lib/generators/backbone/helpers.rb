@@ -9,25 +9,29 @@ module Backbone
       def javascript_path
         File.join(asset_path, 'javascripts')
       end
+      
+      def backbone_path
+        File.join(javascript_path, 'backbone')
+      end
 
       def model_path
-        File.join(javascript_path, "models")
+        File.join(backbone_path, "models")
       end
 
       def collection_path
-        File.join(javascript_path, "collections")
+        File.join(backbone_path, "collections")
       end
 
       def router_path
-        File.join(javascript_path, "routers")
+        File.join(backbone_path, "routers")
       end
 
       def view_path
-        File.join(javascript_path, "views")
+        File.join(backbone_path, "views")
       end
 
       def template_path
-        File.join(asset_path, "templates")
+        File.join(backbone_path, "templates")
       end
 
       def singular_file_name
