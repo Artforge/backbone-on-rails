@@ -32,13 +32,13 @@ module Backbone
       def create_app_file
         js = options.javascript
         ext = js ? ".js" : ".js.coffee"
-        template "app#{ext}", "#{javascript_path}/#{app_filename}#{ext}"
+        template "app#{ext}", "#{backbone_path}/#{app_filename}#{ext}"
       end
 
       def inject_backbone
-        manifest = File.join(javascript_path, options.manifest)
+        manifest = File.join(backbone_path, options.manifest)
         libs = %w(underscore backbone)
-        paths = %w(../templates ./models ./collections ./views ./routers)
+        paths = %w(./templates ./models ./collections ./views ./routers)
 
         out = []
         out << libs.map{ |lib| "//= require #{lib}" }
